@@ -15,4 +15,19 @@ class Users extends Component
         // dd( $this->users);
         return view('livewire.user');
     }
+
+    public function addUser() {
+
+        if($this->task == null){
+            return;
+        }
+        
+        DB::table('tasks')->insert([
+            'name' => $this->task,
+            'status' => 'A fazer',
+            'user_id' => 2
+        ]);
+
+        $this->reset('task');
+    }
 }

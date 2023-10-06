@@ -9,9 +9,9 @@
         </thead>
         <tbody>
             @forelse ($users as $user)
-            <tr>
-                <th>1</th>
-                <td class="text-amber-600">{{$user->name}}</td>
+            <tr class="hover:bg-amber-600 hover:text-white">
+                <th>{{$user->id}}</th>
+                <td>{{$user->name}}</td>
             </tr>
 
             @empty
