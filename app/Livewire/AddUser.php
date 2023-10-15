@@ -9,7 +9,7 @@ use App\Models\User;
 class AddUser extends Component
 {
     public $profiles;
-    public $profile_id;
+    public $profile_id = 1;
     public $name;
 
     public function addUser() {
@@ -25,9 +25,9 @@ class AddUser extends Component
 
         //Vou gravar mensagem na sessão
         //O flash é para que a mensagem seja apagada da sessão logo após ser exibida
-        // session()->flash('toast', 'Carro salvo com sucesso!');
+        session()->flash('response', 'Usuário cadastrado com sucesso!');
 
-        //Redireciona para a lista de carros
+        //Redireciona para a lista de usuários
         $this->redirect('/users', navigate: true);
     }
 

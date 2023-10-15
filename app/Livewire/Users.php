@@ -16,18 +16,18 @@ class Users extends Component
         return view('livewire.user');
     }
 
-    public function addUser() {
+    // public function addUser() {
 
-        if($this->task == null){
-            return;
-        }
+    //     if($this->task == null){
+    //         return;
+    //     }
         
-        DB::table('tasks')->insert([
-            'name' => $this->task,
-            'status' => 'A fazer',
-            'user_id' => 2
-        ]);
+    //     DB::table('tasks')->insert([
+    //         'name' => $this->task,
+    //         'status' => 'A fazer',
+    //         'user_id' => 2
+    //     ]);
 
-        $this->reset('task');
-    }
+    //     $this->reset('task');
+    // }
 }

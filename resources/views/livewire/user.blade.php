@@ -1,4 +1,12 @@
 <div class="overflow-x-auto">
+
+    <!-- mensagem da sessão     -->
+    @if (session()->has('response'))
+        <div class="bg-green-300 text-black font-bold p-4 text-lg mb-3">
+            {{session('response')}}
+        </div>
+    @endif
+
     <h1>Usuários cadastrados</h1>
     <table class="table">
     <thead>

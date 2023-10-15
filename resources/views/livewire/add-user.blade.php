@@ -9,7 +9,6 @@
         <div class="w-full max-w-xs">
             <label> Perfil </label>
             <select wire:model="profile_id" class="select select-bordered w-full max-w-xs">
-
                 <option disabled selected>Perfil</option>
                 @forelse ($profiles as $profile)
                     <option value={{$profile->id}}>{{$profile->name}}</option>
