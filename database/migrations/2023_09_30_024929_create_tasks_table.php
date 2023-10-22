@@ -18,7 +18,7 @@ return new class extends Migration
 
             // foreign key
             $table->foreignId('user_id')->constrained()->restrictOnDelete();
-            $table->foreignId('status_id')->constrained()->restrictOnDelete();
+            $table->foreignId('status_id')->default(1)->constrained()->restrictOnDelete();
 
         });
     }

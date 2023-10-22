@@ -31,8 +31,10 @@
             <tr class="hover">
                 <th>{{$task->id}}</th>
                 <td class="text-amber-600 font-bold">{{$task->name}}</td>
-                <td class="text-amber-600">{{$task->status}}</td>
-                <td class="text-amber-600">{{$task->user_id}}</td>
+                <td class="text-amber-600">
+                  {{$task->status->name}}
+                </td>
+                <td class="text-amber-600">{{$task->user->name}}</td>
             </tr>
             @endforeach
         </tbody>

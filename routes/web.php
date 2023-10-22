@@ -7,6 +7,7 @@ use App\Livewire\Tasks;
 use App\Livewire\Users;
 use App\Livewire\Profiles;
 use App\Livewire\AddUser;
+use App\Livewire\AddTask;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,5 +23,4 @@ Route::get('/', Tasks::class);
 Route::get('/users', Users::class);
 Route::get('/profiles', Profiles::class);
 Route::get('/add-user', AddUser::class);
-// Route::post('/add-user', User::class);
-// Route::get('/counter', Counter::class);
+Route::get('/add-task', AddTask::class);

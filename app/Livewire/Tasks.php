@@ -14,12 +14,12 @@ class Tasks extends Component
 
     public function filterTask(){
         if(empty($this->search)) {
-            $this->tasks = Task::all();
+            $this->tasks = Task::with('User', 'Status')->get();
         }else{
-            $this->tasks = Task::where("name", "like", "%$this->search%")
-                                ->orWhere("status", "like", "%$this->search%")->get();
+            $this->tasks = Task::where("name", "like", "%$this->search%")->get();
         }
     }
+
 
     public function addTask() {
 

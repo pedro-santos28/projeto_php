@@ -17,7 +17,8 @@ return new class extends Migration
             $table->timestamps();
 
             // foreign key
-            $table->foreignId('profile_id')->constrained()->restrictOnDelete();
+            $table->foreignId('profile_id')->constrained()->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 

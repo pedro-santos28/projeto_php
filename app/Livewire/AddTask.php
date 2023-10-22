@@ -3,48 +3,49 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Profile;
 use App\Models\User;
+use App\Models\Task;
 use Livewire\Attributes\Rule;
 
-class AddUser extends Component
+class AddTask extends Component
 {
-    public $profiles;
+
+    public $users;
     
-    #[Rule('required|integer', as: "Perfil")]
-    public $profile_id;
+    #[Rule('required|integer', as: "Usuário")]
+    public $user_id;
 
     #[Rule('required|string|min:3', as: "Nome")]
     public $name;
 
-    public function addUser() {
+    public function addTask() {
 
         #valida o form de acordo com as regras definidas nas propriedades
         #caso haja erro de validação, o método validate() retorna uma mensagem de erro disponível na view
         $this->validate();
 
         //cria o objeto do modelo
-        $user = new User();
+        $task = new Task();
 
         //copia os dados sincronazidos do formulario para o objeto
-        $user->profile_id = $this->profile_id;
-        $user->name = $this->name;
+        $task->user_id = $this->user_id;
+        $task->name = $this->name;
 
         //mando salvar no BD
-        $user->save();
+        $task->save();
 
         //Vou gravar mensagem na sessão
         //O flash é para que a mensagem seja apagada da sessão logo após ser exibida
-        session()->flash('response', 'Usuário cadastrado com sucesso!');
+        session()->flash('response', 'Tarefa cadastrada com sucesso!');
 
         //Redireciona para a lista de usuários
-        $this->redirect('/users', navigate: true);
+        $this->redirect('/', navigate: true);
     }
 
-    
+
     public function render()
     {
-        $this->profiles = Profile::all();
-        return view('livewire.add-user');
+        $this->users = User::all();
+        return view('livewire.add-task');
     }
 }

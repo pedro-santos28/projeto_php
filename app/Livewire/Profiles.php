@@ -32,8 +32,8 @@ class Profiles extends Component
     }
 
     public function deleteProfile($profile_id) {
-        $deleted = DB::table('profiles')->where('id', '=', $profile_id)->delete();
-        // Profile::destroy($profile_id);
+        // $deleted = DB::table('profiles')->where('id', '=', $profile_id)->delete();
+        Profile::destroy($profile_id);
     }
 
     public function render()
