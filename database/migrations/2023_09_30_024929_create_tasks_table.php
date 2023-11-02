@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->timestamps();
-
+            
             // foreign key
             $table->foreignId('user_id')->constrained()->restrictOnDelete();
             $table->foreignId('status_id')->default(1)->constrained()->restrictOnDelete();

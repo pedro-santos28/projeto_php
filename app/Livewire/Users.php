@@ -9,25 +9,14 @@ class Users extends Component
 {
     public $users;
 
+    public function deleteUser($user_id) {
+        User::destroy($user_id);
+    }
+
     public function render()
     {
         $this->users = User::all();
         // dd( $this->users);
         return view('livewire.user');
     }
-
-    // public function addUser() {
-
-    //     if($this->task == null){
-    //         return;
-    //     }
-        
-    //     DB::table('tasks')->insert([
-    //         'name' => $this->task,
-    //         'status' => 'A fazer',
-    //         'user_id' => 2
-    //     ]);
-
-    //     $this->reset('task');
-    // }
 }

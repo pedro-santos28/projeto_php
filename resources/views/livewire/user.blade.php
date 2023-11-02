@@ -13,6 +13,7 @@
         <tr>
             <th></th>
             <th>Nome</th>
+            <td></td>
         </tr>
         </thead>
         <tbody>
@@ -20,6 +21,9 @@
             <tr class="hover:bg-amber-600 hover:text-white">
                 <th>{{$user->id}}</th>
                 <td>{{$user->name}}</td>
+                <td>
+                    <i wire:click="deleteUser('{{ $user->id }}')" class="ph-bold ph-trash text-2xl hover:text-red-600 cursor-pointer"></i>
+                </td>
             </tr>
 
             @empty
